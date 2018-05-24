@@ -82,16 +82,13 @@ def inner():
 def handle_email():
     email = request.form['email']
     url = "http://spiderapi.herokuapp.com/api/emails/"
-    html = '<html><head><link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"><body><table class="table table-striped table-bordered table-hover"><thead><tr><th>{}<th>{}<th>{}<th>{}<th>{}<th>{}<th>{}<tbody>'.format(*head)
-    for row in email[1:]:
-            html += "<tr><td>{}<td>{}<td>{}<td>{}<td>{}<td>{}<td>{}".format(*row)
-        return html
+    
     print("requesting: ", url)
     headers = {'Content-type': 'application/json'}
     r = requests.post(url, json={"email": email, "key": "C88B933A691E16C56EBC92BCC9A7E"}, headers=headers)
     print(r.json())
     if r.status_code == 200:
-        return jsonify(r.json()), 200
+        return jsonify(r.json(), 'home.html'), 200
     else:
         return jsonify({"response": " Something when wrong ", "status_code": 400});
 
