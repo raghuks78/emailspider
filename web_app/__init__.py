@@ -9,6 +9,7 @@ from web_app.files_utils import allowed_file, UPLOAD_FOLDER
 from web_app.csv2json import parse_csv
 from web_app.greq import verify;
 from collections import OrderedDict
+from django.shortcuts import render
 from datetime import datetime
 from web_app.permutator import *
 APP__ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -91,6 +92,9 @@ def handle_email():
         return jsonify(r.json(), 'home.html'), 200
     else:
         return jsonify({"response": " Something when wrong ", "status_code": 400});
+    
+    def index(request):
+        return render(request,home.html)
 
 
 @app.route('/emails', methods=['GET', 'POST'])
