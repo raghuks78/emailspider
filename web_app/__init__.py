@@ -1,3 +1,12 @@
+<html lang = "en">
+<head>
+<title> Email validator </title>
+<meta charset = "utf-8">
+<meta name = "viewport" content = "width=device-width , initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
+
+
 import os, requests, json, sys, traceback
 import pandas as pd
 from flask import Flask, url_for, render_template, jsonify, request, Response, redirect
@@ -256,3 +265,6 @@ def one_domain():
         #return jsonify({"response":req_id,"url":'/results?rid='+req_id});
         return redirect(url_for('results', rid=req_id))'''
     return "Hello"
+
+</head>
+</html>
