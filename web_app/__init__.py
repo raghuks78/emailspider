@@ -81,7 +81,7 @@ def inner():
 
 @app.route('/email', methods=['POST'])
 def handle_email():
-    return render_template('home.html')
+    
     email = request.form['email']
     url = "http://spiderapi.herokuapp.com/api/emails/"
     
@@ -90,8 +90,9 @@ def handle_email():
     r = requests.post(url, json={"email": email, "key": "C88B933A691E16C56EBC92BCC9A7E"}, headers=headers)
     print(r.json())
     
+    
     if r.status_code == 200:
-        return jsonify(r.json()), 200
+        return jsonify(r.json(),'home.html'), 200
     else:
         return jsonify({"response": " Something when wrong ", "status_code": 400});
     
