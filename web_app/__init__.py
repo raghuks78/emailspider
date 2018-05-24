@@ -9,7 +9,7 @@ from web_app.files_utils import allowed_file, UPLOAD_FOLDER
 from web_app.csv2json import parse_csv
 from web_app.greq import verify;
 from collections import OrderedDict
-from django.shortcuts import render
+import render
 from datetime import datetime
 from web_app.permutator import *
 APP__ROOT = os.path.dirname(os.path.abspath(__file__))
