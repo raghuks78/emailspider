@@ -1,9 +1,3 @@
-<html>
-<head>
-<title> Email validator </title>
-<meta charset = "utf-8">
-
-
 import os, requests, json, sys, traceback
 import pandas as pd
 from flask import Flask, url_for, render_template, jsonify, request, Response, redirect
@@ -263,5 +257,3 @@ def one_domain():
         return redirect(url_for('results', rid=req_id))'''
     return "Hello"
 
-</head>
-</html>
