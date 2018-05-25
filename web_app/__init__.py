@@ -89,7 +89,7 @@ def handle_email():
     headers = {'Content-type': 'application/json'}
     r = requests.post(url, json={"email": email, "key": "C88B933A691E16C56EBC92BCC9A7E"}, headers=headers)
    
-    print(r.json(),email)
+    print(r.json())
     
      if r.status_code == 200:
         return jsonify(r.json()), 200
