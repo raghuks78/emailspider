@@ -92,7 +92,7 @@ def handle_email():
     print(r.json())
     
      if r.status_code == 200:
-        return jsonify(r.json(),email), 200
+        return jsonify(r.json(),'email'), 200
     else:
         return jsonify({"response": " Something when wrong ", "status_code": 400});
     
